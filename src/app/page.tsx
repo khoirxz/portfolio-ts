@@ -6,8 +6,11 @@ import {
   PiGithubLogoFill,
 } from "react-icons/pi";
 
-import Card from "@/components/custom/card";
+// import Card from "@/components/custom/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Data } from "../types/posts";
+import Link from "next/link";
 
 const getData = async () => {
   const client = new GraphQLClient(
@@ -49,7 +52,7 @@ const Home: React.FC = async () => {
   const data = await getData();
 
   return (
-    <main className="items-center justify-between bg-black text-white">
+    <main className="items-center justify-between">
       <div className="max-w-screen-xl mx-auto w-screen relative">
         <div className="static lg:fixed flex flex-col justify-between w-full p-24 h-screen lg:py-24 lg:pl-32 lg:max-w-xl">
           <div>
@@ -93,13 +96,26 @@ const Home: React.FC = async () => {
         <div className="static lg:absolute p-24 w-full flex flex-col gap-5 md:right-0 md:py-24 lg:pl-0 lg:max-w-xl lg:pr-24">
           <h1 className="lg:hidden">Project</h1>
           {data.allPosts.edges.map((item) => (
-            <Card
-              key={item.node.id}
-              title={item.node.title}
-              description={item.node.description}
-              category={item.node.category}
-              url={item.node.url}
-            />
+            <Link key={item.node.id} href={item.node.url}>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl">{item.node.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex mb-2 gap-2">
+                    {item.node.category.map((item) => (
+                      <Badge
+                        key={item.id}
+                        className="text-white group-hover:border-black group-hover:text-black"
+                      >
+                        {item.title}
+                      </Badge>
+                    ))}
+                  </div>
+                  <p>{item.node.description}</p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
