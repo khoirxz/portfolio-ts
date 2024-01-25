@@ -7,7 +7,7 @@ import {
 } from "react-icons/pi";
 
 import Card from "@/components/custom/card";
-import { Data } from "./types/posts";
+import { Data } from "../types/posts";
 
 const getData = async () => {
   const client = new GraphQLClient(
@@ -33,6 +33,8 @@ const getData = async () => {
                   title
                 }
               }
+              id
+              url
             }
           }
         }
