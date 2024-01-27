@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en">
         <head>
           <meta property="og:url" content="https://rizqikhoir.vercel.app/" />
           <meta property="og:type" content="website" />
@@ -25,6 +26,7 @@ export default function RootLayout({
             content="Hey its me! Rizqi, i can write code 😊"
           />
           <meta property="og:image" content="/next.svg" />
+          <SpeedInsights />
         </head>
         <body className={GeistSans.className}>
           <ThemeProvider
