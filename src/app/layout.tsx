@@ -16,6 +16,16 @@ export default function RootLayout({
   return (
     <>
       <html lang="en" suppressHydrationWarning>
+        <head>
+          <meta property="og:url" content="https://rizqikhoir.vercel.app/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Rizqi Khoirurrohman" />
+          <meta
+            property="og:description"
+            content="Hey its me! Rizqi, i can write code 😊"
+          />
+          <meta property="og:image" content="/next.svg" />
+        </head>
         <body className={GeistSans.className}>
           <ThemeProvider
             attribute="class"
