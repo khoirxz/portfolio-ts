@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <head>
           <meta property="og:url" content="https://rizqikhoir.vercel.app/" />
           <meta property="og:type" content="website" />
@@ -35,7 +35,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <main>{children}</main>
           </ThemeProvider>
         </body>
       </html>
