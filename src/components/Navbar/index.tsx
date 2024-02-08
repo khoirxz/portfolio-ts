@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             <NavigationMenuItem key={i}>
               <Link href={item.url} legacyBehavior passHref>
                 <NavigationMenuLink>
-                  <Button size="icon" variant="ghost">
+                  <Button size="icon" variant="ghost" type="button">
                     {item.icon}
                   </Button>
                 </NavigationMenuLink>

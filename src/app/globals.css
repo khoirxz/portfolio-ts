@@ -70,6 +70,10 @@
   * {
     @apply border-border;
   }
+  ::selection {
+    background-color: #ffffff;
+    color: #080808;
+  }
   body {
     @apply bg-background text-foreground;
   }
