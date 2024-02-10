@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
   const { setTheme } = useTheme();
 
   return (
-    <div className="fixed top-12 left-2/4 py-4 px-2 -translate-x-2/4 -translate-y-2/4 max-w-screen-xl w-full">
+    <div className="fixed top-0 left-2/4 py-4 px-2 -translate-x-2/4 max-w-screen-xl w-full">
       <NavigationMenu className="max-w-screen-xl justify-between">
         <NavigationMenuList>
           {social.map((item, i) => (

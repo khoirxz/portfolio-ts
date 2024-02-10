@@ -1,9 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
 
-const Template: React.FC<{ children: ReactNode }> = ({ children }) => {
+interface DivProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
+
+const Template: React.FC<DivProps> = ({ children }) => {
   return <div>{children}</div>;
 };
 
