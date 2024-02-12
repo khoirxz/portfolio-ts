@@ -7,7 +7,15 @@ interface DivProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Template: React.FC<DivProps> = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 0.75 }}
+    >
+      {children}
+    </motion.div>
+  );
 };
 
 export default Template;

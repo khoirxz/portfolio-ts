@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Rizqi Khoirurrohman",
@@ -35,6 +36,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Navbar />
             <main>{children}</main>
           </ThemeProvider>
         </body>
