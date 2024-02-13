@@ -51,7 +51,7 @@ const Content: React.FC<{ data: Data }> = ({ data }) => {
         </div>
       </header>
 
-      <main className="items-center justify-between relative transition-all">
+      <main className="items-center justify-between relative transition-all mt-32">
         <motion.div
           className="px-1 gap-1 mt-16 max-w-screen-xl mx-auto grid custom-cols lg:mt-32"
           variants={variant}
