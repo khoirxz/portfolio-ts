@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
@@ -9,6 +10,11 @@ export const metadata: Metadata = {
   title: "Rizqi Khoirurrohman",
   description: "Hey its me! Rizqi, i can write code 😊",
 };
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -29,7 +35,7 @@ export default function RootLayout({
           <meta property="og:image" content="/next.svg" />
           <SpeedInsights />
         </head>
-        <body className={GeistSans.className}>
+        <body className={inter.className}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

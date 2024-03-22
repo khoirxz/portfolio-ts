@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
@@ -26,7 +27,6 @@ import {
 import { Button } from "../ui/button";
 
 import { Social } from "@/types/social";
-import { useState } from "react";
 
 const social: Social = [
   {
@@ -48,7 +48,9 @@ const social: Social = [
 
 const Navbar: React.FC = () => {
   const [yPosition, setYPosition] = useState<boolean>(false);
-  const { setTheme } = useTheme();
+
+  const { setTheme, theme } = useTheme();
+
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -60,22 +62,22 @@ const Navbar: React.FC = () => {
     console.log(yPosition);
   });
 
-  return yPosition ? (
-    <motion.div className="fixed top-1 left-2/4 -translate-x-2/4 max-w-screen-xl w-full z-10 shadow-md">
-      <motion.div
-        className="w-[98%] xl:w-full"
-        style={{
-          position: "absolute",
-          backgroundColor: "inherit",
-
-          height: "100%",
-          top: "0",
-          left: "50%",
-          translateX: "-50%",
-          borderRadius: "0",
-        }}
-        animate={{ borderRadius: "0.375rem", backgroundColor: "#fff" }}
-      ></motion.div>
+  return (
+    <motion.div className="fixed top-1 left-2/4 -translate-x-2/4 max-w-screen-xl w-full">
+      {yPosition ? (
+        <motion.div
+          className="w-[98%] xl:w-full"
+          style={{
+            position: "absolute",
+            backgroundColor: "rgba(255, 255, 255, 0)",
+            height: "100%",
+            top: "0",
+            left: "50%",
+            translateX: "-50%",
+            backdropFilter: "blur(5px)",
+          }}
+        ></motion.div>
+      ) : null}
       <NavigationMenu className="max-w-screen-xl justify-between py-2 px-2">
         <NavigationMenuList>
           {social.map((item, i) => (
@@ -83,50 +85,7 @@ const Navbar: React.FC = () => {
               <Link href={item.url} legacyBehavior passHref>
                 <NavigationMenuLink>
                   <Button size="icon" variant="ghost" type="button">
-                    {yPosition ? item.darkIcon : item.lightIcon}
-                  </Button>
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black" />
-                  <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
-                  System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </motion.div>
-  ) : (
-    <motion.div className="fixed top-1 left-2/4 -translate-x-2/4 max-w-screen-xl w-full ">
-      <NavigationMenu className="max-w-screen-xl justify-between py-2 px-2">
-        <NavigationMenuList>
-          {social.map((item, i) => (
-            <NavigationMenuItem key={i}>
-              <Link href={item.url} legacyBehavior passHref>
-                <NavigationMenuLink>
-                  <Button size="icon" variant="ghost" type="button">
-                    {yPosition ? item.darkIcon : item.lightIcon}
+                    {theme === "dark" ? item.darkIcon : item.lightIcon}
                   </Button>
                 </NavigationMenuLink>
               </Link>

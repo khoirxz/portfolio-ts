@@ -39,7 +39,12 @@ const AnimateText: React.FC<{ text: string }> = ({ text }) => {
 
   return (
     <motion.div
-      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap" }}
+      style={{
+        overflow: "hidden",
+        display: "flex",
+        flexWrap: "wrap",
+        paddingBottom: 10,
+      }}
       variants={container}
       initial="hidden"
       animate="visible"
