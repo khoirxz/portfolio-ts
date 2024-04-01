@@ -50,7 +50,9 @@ const Content: React.FC<{ data: Data }> = ({ data }) => {
           <h1 className="text-xl font-bold">Recent Projects</h1>
         </div>
 
-        <Carousel className="cursor-grab max-w-screen-sm mx-auto">
+        <Carousel className="cursor-grab max-w-screen-sm mx-auto relative">
+          <div className="absolute bg-gradient-to-r from-[#09090B] to-transparent z-10 h-full w-[10px] left-0"></div>
+          <div className="absolute bg-gradient-to-l from-[#09090B] to-transparent z-10 h-full w-[10px] right-0"></div>
           <CarouselContent>
             {data.allPosts.edges.map((item) => (
               <CarouselItem
@@ -90,8 +92,8 @@ const Content: React.FC<{ data: Data }> = ({ data }) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselNext className="absolute right-4 cursor-pointer disabled:hidden text-white/5 bg-zinc-900/20 border-zinc-900/5 hover:border-white hover:bg-zinc-900" />
-          <CarouselPrevious className="absolute left-4 cursor-pointer disabled:hidden text-white/5 bg-zinc-900/20 border-zinc-900/5 hover:border-white hover:bg-zinc-900" />
+          <CarouselNext className="absolute right-4 cursor-pointer disabled:hidden text-white dark:text-white/5 dark:hover:text-white hover:text-white bg-zinc-900/20 border-zinc-900/5 hover:border-white hover:bg-zinc-900" />
+          <CarouselPrevious className="absolute left-4 cursor-pointer disabled:hidden text-white dark:text-white/5 dark:hover:text-white hover:text-white bg-zinc-900/20 border-zinc-900/5 hover:border-white hover:bg-zinc-900" />
         </Carousel>
       </main>
     </>
