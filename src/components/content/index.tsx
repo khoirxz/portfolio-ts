@@ -10,89 +10,89 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowTopRightIcon, PaperPlaneIcon } from "@radix-ui/react-icons";
-import { motion } from "framer-motion";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 import { Data } from "@/types/posts";
 import { Button } from "../ui/button";
 import AnimateText from "@/lib/AnimateText";
-
-const variant = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const varianItem = {
-  hidden: { opacity: 0, y: -50 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
 
 const Content: React.FC<{ data: Data }> = ({ data }) => {
   return (
     <>
-      <header className="mt-20 lg:mt-36 max-w-screen-xl mx-auto flex flex-col gap-9">
-        <div className="px-2 xl:px-0 flex flex-col gap-4">
-          <AnimateText text="Hi, I am Rizqi" />
+      <header className="mt-12 lg:mt-20 px-3 md:px-0 max-w-screen-sm mx-auto flex flex-col gap-2">
+        <div className="px-2 xl:px-0 flex flex-col gap-3">
+          <AnimateText text="Halo, saya Rizqi" type="header" />
           <AnimateText
-            text="a full-stack programmer and project builder with a passion for
-            startups and new technologies."
+            text="a full-stack programmer and project builder with a passion for startups and new technologies."
+            type="body"
           />
+          <div>
+            <Link
+              href="mailto:khoirrurrohman@gmail.com"
+              target="_blank"
+              passHref
+            >
+              <Button className="rounded-full text-xs">Get in touch</Button>
+            </Link>
+          </div>
         </div>
       </header>
 
-      <main className="items-center justify-between relative transition-all mt-32">
-        <motion.div
-          className="px-1 gap-1 mt-16 max-w-screen-xl mx-auto grid custom-cols lg:mt-32"
-          variants={variant}
-          initial="hidden"
-          animate="show"
-        >
-          {data.allPosts.edges.map((item) => (
-            <motion.div key={item.node.id} variants={varianItem}>
-              <Card
-                className="bg-black/10 dark:bg-white/10 border-0 shadow-0"
+      <main className="relative items-center justify-between transition-all my-10 px-2">
+        <div className="mb-5 px-3 md:px-0 max-w-screen-sm mx-auto">
+          <h1 className="text-xl font-bold">Recent Projects</h1>
+        </div>
+
+        <Carousel className="cursor-grab max-w-screen-sm mx-auto">
+          <CarouselContent>
+            {data.allPosts.edges.map((item) => (
+              <CarouselItem
                 key={item.node.id}
+                className="md:basis-1/2 lg:basis-1/2"
               >
-                <CardHeader>
-                  <CardTitle>{item.node.title}</CardTitle>
-                </CardHeader>
+                <Card
+                  className="bg-black/10 dark:bg-white/10 border-0 shadow-0 z-10"
+                  key={item.node.id}
+                >
+                  <CardHeader>
+                    <CardTitle>{item.node.title}</CardTitle>
+                  </CardHeader>
 
-                <CardContent>
-                  <div className="flex gap-3 flex-wrap mb-2">
-                    {item.node.category.map((item) => (
-                      <span key={item.id} className="font-thin underline">
-                        {item.title}
-                      </span>
-                    ))}
-                  </div>
-                  <CardDescription>{item.node.description}</CardDescription>
-                </CardContent>
+                  <CardContent>
+                    <div className="flex gap-3 flex-wrap mb-2">
+                      {item.node.category.map((item) => (
+                        <span key={item.id} className="font-thin underline">
+                          {item.title}
+                        </span>
+                      ))}
+                    </div>
+                    <CardDescription>{item.node.description}</CardDescription>
+                  </CardContent>
 
-                <CardFooter>
-                  <Link href={item.node.url} target="_blank">
-                    <Button
-                      variant="outline"
-                      className="cursor-pointer rounded-lg bg-black hover:bg-black/80 text-white hover:text-white dark:bg-white dark:hover:bg-white/80 dark:text-black"
-                    >
-                      visit <ArrowTopRightIcon className="h-4 w-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+                  <CardFooter>
+                    <Link href={item.node.url} target="_blank">
+                      <Button
+                        variant="outline"
+                        className="cursor-pointer rounded-lg bg-black hover:bg-black/80 text-white hover:text-white dark:bg-white dark:hover:bg-white/80 dark:text-black"
+                      >
+                        visit <ArrowTopRightIcon className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselNext className="absolute right-4 cursor-pointer disabled:hidden text-white/5 bg-zinc-900/20 border-zinc-900/5 hover:border-white hover:bg-zinc-900" />
+          <CarouselPrevious className="absolute left-4 cursor-pointer disabled:hidden text-white/5 bg-zinc-900/20 border-zinc-900/5 hover:border-white hover:bg-zinc-900" />
+        </Carousel>
       </main>
     </>
   );

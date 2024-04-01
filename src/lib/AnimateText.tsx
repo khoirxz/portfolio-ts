@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 
-const AnimateText: React.FC<{ text: string }> = ({ text }) => {
+const AnimateText: React.FC<{ text: string; type: "header" | "body" }> = ({
+  text,
+  type,
+}) => {
   const words = text.split(" ");
 
   // Variants for Container of words.
@@ -49,16 +52,27 @@ const AnimateText: React.FC<{ text: string }> = ({ text }) => {
       initial="hidden"
       animate="visible"
     >
-      {words.map((word, index) => (
-        <motion.span
-          variants={child}
-          style={{ marginRight: "5px" }}
-          key={index}
-          className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-zinc-700"
-        >
-          {word}
-        </motion.span>
-      ))}
+      {words.map((word, index) =>
+        type === "header" ? (
+          <motion.span
+            variants={child}
+            style={{ marginRight: "5px" }}
+            key={index}
+            className="scroll-m-20 text-2xl font-bold"
+          >
+            {word}
+          </motion.span>
+        ) : (
+          <motion.span
+            variants={child}
+            style={{ marginRight: "5px" }}
+            key={index}
+            className="scroll-m-20"
+          >
+            {word}
+          </motion.span>
+        )
+      )}
     </motion.div>
   );
 };
