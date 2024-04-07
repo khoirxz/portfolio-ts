@@ -32,11 +32,11 @@ const Card: React.FC<Node> = ({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
             quality={100}
-            className="rounded object-cover object-top"
+            className="rounded-lg object-cover object-top"
             loading="lazy"
           />
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <Link href={url} target="_blank">
             <h1 className="font-bold text-xl">{title}</h1>
           </Link>

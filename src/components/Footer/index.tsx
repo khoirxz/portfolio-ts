@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
     >
       <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between max-w-screen-lg mx-auto py-6">
         <div>
-          <p className="font-bold text-lg">
+          <p className="font-bold text-lg text-center md:text-left ">
             &copy; {new Date().getFullYear()} Rizqi Khoirurrohman
           </p>
         </div>

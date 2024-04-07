@@ -51,8 +51,8 @@ const Content: React.FC<{ data: Data }> = ({ data }) => {
         </div>
       </header>
 
-      <main className="relative items-center justify-between transition-all my-10 px-2">
-        <div className="mb-8 px-3 md:px-0 max-w-screen-lg mx-auto">
+      <main className="relative max-w-screen-lg mx-auto transition-all my-10 px-2 flex flex-col gap-20">
+        <div className="px-3 md:px-0">
           <h1 className="text-xl font-bold">Recent Projects</h1>
         </div>
 
@@ -60,13 +60,13 @@ const Content: React.FC<{ data: Data }> = ({ data }) => {
           variants={variant}
           initial="hidden"
           animate="show"
-          className="mb-5 px-3 md:px-0 max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"
+          className="px-3 md:px-0 grid grid-cols-1 lg:grid-cols-2 gap-12"
         >
           {data.allPosts.edges.map(
             ({
               node: { id, title, thumbnail, category, description, url },
             }) => (
-              <motion.div variants={varianItem} key={id}>
+              <motion.div key={id} variants={varianItem} className="w-full">
                 <Card
                   title={title}
                   thumbnail={thumbnail}
