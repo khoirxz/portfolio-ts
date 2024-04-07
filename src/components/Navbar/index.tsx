@@ -44,12 +44,12 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed z-50 top-1 left-2/4 -translate-x-2/4 max-w-screen-sm w-full"
+      className="fixed z-50 top-1 left-2/4 -translate-x-2/4 max-w-screen-lg w-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
     >
-      <NavigationMenu className="max-w-screen-sm mx-auto justify-end py-2 px-2">
+      <NavigationMenu className="max-w-screen-lg mx-auto justify-end py-2 px-2">
         <NavigationMenuList>
           <NavigationMenuItem>
             <DropdownMenu>

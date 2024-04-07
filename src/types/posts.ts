@@ -10,15 +10,21 @@ interface Edge {
   node: Node;
 }
 
-interface Node {
+export interface Node {
   category: Category[];
   description: string;
   id: string;
+  thumbnail: Thumbnail;
   title: string;
   url: string;
 }
 
 interface Category {
   id: string;
+  title: string;
+}
+
+interface Thumbnail {
+  src: string;
   title: string;
 }

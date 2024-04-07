@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
     >
-      <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between max-w-screen-sm mx-auto py-6">
+      <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between max-w-screen-lg mx-auto py-6">
         <div>
           <p className="font-bold text-lg">
             &copy; {new Date().getFullYear()} Rizqi Khoirurrohman

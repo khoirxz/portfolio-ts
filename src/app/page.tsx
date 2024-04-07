@@ -29,6 +29,10 @@ const getData = async () => {
               }
               id
               url
+              thumbnail {
+                src
+                title
+              }
             }
           }
         }
