@@ -16,7 +16,7 @@ export default async function Home() {
             .text-title
           </p>
           <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-            <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+            <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
             <h1 className="text-2xl font-semibold">Full stack developer</h1>
           </div>
         </div>
@@ -26,8 +26,8 @@ export default async function Home() {
             .text-description
           </p>
           <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-            <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
-            <p className="text-zinc-200">
+            <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+            <p className="dark:text-zinc-200 text-zinc-800">
               Pada umumnya saya menggunakan React/Next JS untuk frontend dan PHP
               (Laravel) sebagai backend.
               <br /> Saya tertarik pada teknologi baru dan berkerjasama dengan
@@ -43,7 +43,7 @@ export default async function Home() {
             .text-title-project-section
           </p>
           <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-            <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+            <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
             <h1 className="text-2xl font-semibold">Proyek</h1>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default async function Home() {
                   .box-{i + 1}
                 </p>
                 <div className="border-t border-b border-dotted border-zinc-700 relative flex justify-between">
-                  <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+                  <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
                   <div className="flex flex-col gap-1 w-full">
                     <div className="relative w-full aspect-video rounded-sm mb-4">
                       <Image
@@ -71,14 +71,14 @@ export default async function Home() {
                       />
                     </div>
 
-                    <h1 className="text-zinc-200 font-semibold px-1">
+                    <h1 className="dark:text-zinc-200 text-zinc-800 font-semibold px-1">
                       {item.node.title}
                     </h1>
-                    <p className="text-zinc-300 text-sm px-1">
+                    <p className="dark:text-zinc-300 text-zinc-600 text-sm px-1">
                       {item.node.description}
                     </p>
                   </div>
-                  <span className="w-2 bg-white/10 border-l border-zinc-700 flex-shrink-0"></span>
+                  <span className="w-2 bg-black/10 dark:bg-white/10 border-l border-zinc-700 flex-shrink-0"></span>
                   {i % 2 === 0 && (
                     <div className="absolute top-0 right-0 h-full w-px border-r border-dotted border-zinc-700"></div>
                   )}
@@ -88,7 +88,6 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <span className="w-full border-b border-zinc-700"></span>
     </div>
   );
 }

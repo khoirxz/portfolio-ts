@@ -37,7 +37,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           .text-title
         </p>
         <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
           <h1 className="text-2xl font-semibold">
             {data.allPosts.edges[0].node.title}
           </h1>
@@ -49,7 +49,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           .box-categories
         </p>
         <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
           <div className="flex gap-1">
             {data.allPosts.edges[0].node.category.map((item) => (
               <span
@@ -67,7 +67,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           .text-description
         </p>
         <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
           <div>
             <RichTextRenderer node={data.allPosts.edges[0].node.content.json} />
           </div>
@@ -78,16 +78,16 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <p className="font-[family-name:var(--font-fira-code)] text-xs text-zinc-700 p-1">
           .box-footer
         </p>
-        <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+        <div className="border-t border-b border-dotted border-zinc-700 flex">
+          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
           <a
             href={data.allPosts.edges[0].node.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white px-2 py-1 w-32 text-black">
+            className="bg-zinc-800 text-white dark:bg-white px-2 py-1 w-32 text-center hover:bg-zinc-700 dark:text-black">
             Lihat
           </a>
-          <span className="w-2 bg-white/10 border-l border-r border-zinc-700 flex-shrink-0"></span>
+          <span className="w-2 bg-black/10 dark:bg-white/10 border-l border-r border-zinc-700 flex-shrink-0"></span>
         </div>
       </div>
     </section>

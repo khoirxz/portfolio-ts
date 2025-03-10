@@ -8,9 +8,9 @@ const Footer: React.FC = () => {
               .text-title-footer
             </p>
             <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-              <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
-              <p className="text-zinc-200 text-sm">
-                Rizqi {new Date().getFullYear()}
+              <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
+              <p className="dark:text-zinc-200 text-zinc-600 text-sm">
+                Rizqi Khoirurrohman
               </p>
             </div>
           </div>
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               <div className="flex gap-1 relative">
                 <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
                 <a
-                  href="https://github.com/rizqimaulana"
+                  href="https://github.com/khoirxz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline text-zinc-500 text-sm">
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <div className="flex gap-1 relative">
                 <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
                 <a
-                  href="https://github.com/rizqimaulana"
+                  href="https://instagram.com/rizqi.khoir"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline text-zinc-500 text-sm">
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <div className="flex gap-1 relative">
                 <span className="w-2 bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
                 <a
-                  href="https://github.com/rizqimaulana"
+                  href="https://facebook.com/rootbackdor"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline text-zinc-500 text-sm">

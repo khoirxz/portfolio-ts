@@ -50,7 +50,7 @@ export function PostModal({ children }: { children: React.ReactNode }) {
               <button className="cursor-pointer" onClick={onDismiss}>
                 <IoMdClose
                   size={20}
-                  className="border border-zinc-700 w-6 h-6"
+                  className="border border-zinc-700 w-6 h-6 dark:text-zinc-200 text-zinc-600"
                 />
               </button>
             </div>
