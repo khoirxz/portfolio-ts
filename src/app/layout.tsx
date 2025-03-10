@@ -1,54 +1,70 @@
 import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-// import { GeistSans } from "geist/font/sans";
-import { Inter } from "next/font/google";
+// google font
+import { Fira_Code } from "next/font/google";
+// next/font/local
+import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
+
+// font files can be colocated in the `app`
+
+const GeneralSans = localFont({
+  src: "./fonts/GeneralSans-Variable.woff2",
+  display: "swap",
+  variable: "--font-general-sans",
+});
+
+// google font
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fira-code",
+});
 
 export const metadata: Metadata = {
   title: "Rizqi Khoirurrohman",
-  description: "Hey its me! Rizqi, i can write code 😊",
+  description: "Portfolio",
+  keywords: ["programming", "web development", "full stack"],
+  authors: [{ name: "Rizqi", url: "https://rizqikhoir.vercel.app/" }],
+  creator: "Rizqi Khoirurrohman",
+  publisher: "Rizqi Khoirurrohman",
+  openGraph: {
+    title: "Rizqi Khoirurrohman",
+    description: "Portfolio",
+    siteName: "Rizqi Khoirurrohman",
+    images: [
+      {
+        url: "https://rizqikhoir.vercel.app/og-image.png",
+        width: 800,
+        height: 600,
+        alt: "Rizqi Khoirurrohman",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head>
-          <meta property="og:url" content="https://rizqikhoir.vercel.app/" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Rizqi Khoirurrohman" />
-          <meta
-            property="og:description"
-            content="Hey its me! Rizqi, i can write code 😊"
-          />
-          <meta property="og:image" content="/next.svg" />
-          <SpeedInsights />
-        </head>
-        <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar />
-            <main className="relative">{children}</main>
-            <Footer />
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+    <html lang="en">
+      <body
+        className={`${GeneralSans.variable} ${firaCode.variable} antialiased font-[family-name:var(--font-general-sans)] bg-[color:var(--color-background)] text-[color:var(--color-foreground)]`}>
+        <Navbar />
+        <div id="main-content">
+          {children}
+
+          <Footer />
+        </div>
+        {modal}
+      </body>
+    </html>
   );
 }

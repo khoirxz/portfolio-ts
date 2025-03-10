@@ -17,6 +17,7 @@ export interface Node {
   thumbnail: Thumbnail;
   title: string;
   url: string;
+  slug: string;
 }
 
 interface Category {
