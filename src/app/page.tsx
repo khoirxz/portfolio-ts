@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col items-center max-w-lg mx-auto">
-      <section className="flex flex-col justify-end min-h-screen w-full gap-5">
+      <section className="flex flex-col justify-end min-h-screen w-full gap-5 p-4 md:p-0">
         <div className="relative w-[120px] h-[120px] rounded-2xl overflow-hidden hover:scale-105 transition-all">
           <Image
             src="/profile.jpg"
