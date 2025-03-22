@@ -16,79 +16,52 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const data = await getPost(slug);
 
   return (
-    <section className="flex flex-col max-w-[500px] w-full mx-auto border-l border-dotted border-r border-zinc-700 pb-12">
-      <div>
-        <p className="font-[family-name:var(--font-fira-code)] text-xs text-zinc-700 p-1">
-          .image-cover
-        </p>
+    <section className="flex flex-col max-w-lg mx-auto mb-10">
+      <div className="mt-16">
         <div className="relative">
           <Image
             src={data.allPosts.edges[0].node.thumbnail.src}
             alt={data.allPosts.edges[0].node.thumbnail.title}
             width={500}
             height={500}
-            className="w-full"
+            className="w-full rounded-lg"
+            priority
           />
         </div>
       </div>
 
       <div className="mt-7">
-        <p className="font-[family-name:var(--font-fira-code)] text-xs text-zinc-700 p-1">
-          .text-title
-        </p>
-        <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
-          <h1 className="text-2xl font-semibold">
-            {data.allPosts.edges[0].node.title}
-          </h1>
-        </div>
+        <h1 className="text-2xl font-semibold">
+          {data.allPosts.edges[0].node.title}
+        </h1>
       </div>
 
-      <div>
-        <p className="font-[family-name:var(--font-fira-code)] text-xs text-zinc-700 p-1">
-          .box-categories
-        </p>
-        <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
-          <div className="flex gap-1">
-            {data.allPosts.edges[0].node.category.map((item) => (
-              <span
-                key={item.id}
-                className="text-xs text-zinc-500 hover:underline">
-                {item.title}
-              </span>
-            ))}
-          </div>
+      <div className="mt-2">
+        <div className="flex gap-1">
+          {data.allPosts.edges[0].node.category.map((item) => (
+            <span
+              key={item.id}
+              className="text-xs text-zinc-500 hover:underline bg-zinc-100 px-2 py-1 rounded-md">
+              {item.title}
+            </span>
+          ))}
         </div>
       </div>
 
       <div className="mt-4">
-        <p className="font-[family-name:var(--font-fira-code)] text-xs text-zinc-700 p-1">
-          .text-description
-        </p>
-        <div className="border-t border-b border-dotted border-zinc-700 flex gap-1">
-          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
-          <div>
-            <RichTextRenderer node={data.allPosts.edges[0].node.content.json} />
-          </div>
+        <div>
+          <RichTextRenderer node={data.allPosts.edges[0].node.content.json} />
         </div>
       </div>
 
-      <div className="mt-2">
-        <p className="font-[family-name:var(--font-fira-code)] text-xs text-zinc-700 p-1">
-          .box-footer
-        </p>
-        <div className="border-t border-b border-dotted border-zinc-700 flex">
-          <span className="w-2 bg-black/10 dark:bg-white/10 border-r border-zinc-700 flex-shrink-0"></span>
-          <a
-            href={data.allPosts.edges[0].node.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-zinc-800 text-white dark:bg-white px-2 py-1 w-32 text-center hover:bg-zinc-700 dark:text-black">
-            Lihat
-          </a>
-          <span className="w-2 bg-black/10 dark:bg-white/10 border-l border-r border-zinc-700 flex-shrink-0"></span>
-        </div>
+      <div className="mt-5">
+        <a
+          href={data.allPosts.edges[0].node.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-zinc-900 text-white px-4 py-2 rounded-md hover:bg-zinc-800 transition-all">
+          Lihat
+        </a>
       </div>
     </section>
   );

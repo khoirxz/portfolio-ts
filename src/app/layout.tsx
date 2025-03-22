@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import { globalConfig } from "./config";
 
 // font files can be colocated in the `app`
 
@@ -23,8 +24,8 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Rizqi Khoirurrohman",
-  description: "Portfolio",
+  title: globalConfig.title,
+  description: globalConfig.description,
   keywords: ["programming", "web development", "full stack"],
   authors: [{ name: "Rizqi", url: "https://rizqikhoir.vercel.app/" }],
   creator: "Rizqi Khoirurrohman",
@@ -56,14 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${GeneralSans.variable} ${firaCode.variable} antialiased font-[family-name:var(--font-general-sans)] bg-[color:var(--color-background)] text-[color:var(--color-foreground)]`}>
+        className={`${GeneralSans.variable} ${firaCode.variable} antialiased font-[family-name:var(--font-general-sans)] relative`}>
         <Navbar />
-        <div id="main-content">
-          {children}
-
-          <Footer />
-        </div>
+        {children}
         {modal}
+        <Footer />
       </body>
     </html>
   );
