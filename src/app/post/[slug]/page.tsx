@@ -16,7 +16,7 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const data = await getPost(slug);
 
   return (
-    <section className="flex flex-col max-w-lg mx-auto mb-10">
+    <section className="flex flex-col max-w-lg mx-auto mb-10 px-4 lg:px-0">
       <div className="mt-16">
         <div className="relative">
           <Image
