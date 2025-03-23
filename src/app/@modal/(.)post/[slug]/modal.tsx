@@ -33,7 +33,7 @@ export function PostModal({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="fixed inset-0 overflow-auto bg-[color:var(--color-background)] w-full">
-      <div ref={dialogRef} className="bg-white/50 w-full h-full">
+      <div ref={dialogRef} className="bg-white w-full h-full">
         <div className="min-h-screen h-full">
           <div className="max-w-lg mx-auto min-h-screen flex flex-col gap-5">
             <div className="flex items-center justify-end p-3 mt-16">

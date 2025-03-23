@@ -3,11 +3,11 @@ import { globalConfig } from "../config";
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="max-w-lg mx-auto flex flex-col">
+      <div className="max-w-lg mx-auto flex flex-col px-4 lg:px-0">
         <div className="my-5 grid grid-cols-1 sm:grid-cols-2 items-center gap-3 sm:gap-0">
           <div>
             <div className="flex gap-1">
-              <p className="text-sm text-center sm:text-left">
+              <p className="text-sm text-center lg:text-left">
                 {globalConfig.title}
               </p>
             </div>
