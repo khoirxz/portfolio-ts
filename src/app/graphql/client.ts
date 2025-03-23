@@ -7,6 +7,7 @@ const client = new GraphQLClient(
       "Content-Type": "application/json",
       "x-caisy-apikey": `${process.env.API_KEY}`,
     },
+    cache: "no-cache",
   }
 );
 

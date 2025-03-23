@@ -45,7 +45,7 @@ export function PostModal({ children }: { children: React.ReactNode }) {
               </button>
             </div>
 
-            <div className="flex flex-col gap-3 justify-between pb-12">
+            <div className="flex flex-col gap-3 justify-between pb-12 px-4 bg-white">
               {children}
             </div>
           </div>

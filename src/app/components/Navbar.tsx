@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
       className={`fixed top-0 w-full z-30 transition-all ${
         isScrolled ? "bg-white/70 backdrop-blur-md" : "bg-white"
       }`}>
-      <div className="py-4 flex justify-between items-center max-w-lg mx-auto">
+      <div className="py-4 flex justify-between items-center max-w-lg mx-auto px-3 lg:px-0">
         <Link
           href={"/"}
           className="font-semibold text-lg hover:italic hover:font-light hover:underline transition-all">
