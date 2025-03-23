@@ -6,8 +6,10 @@ const Footer: React.FC = () => {
       <div className="max-w-lg mx-auto flex flex-col">
         <div className="my-5 grid grid-cols-1 sm:grid-cols-2 items-center gap-3 sm:gap-0">
           <div>
-            <div className="flex gap-1 text-center sm:text-left">
-              <p className="text-sm">{globalConfig.title}</p>
+            <div className="flex gap-1">
+              <p className="text-sm text-center sm:text-left">
+                {globalConfig.title}
+              </p>
             </div>
           </div>
 
