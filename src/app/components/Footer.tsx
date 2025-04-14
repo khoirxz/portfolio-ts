@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <div className="my-5 grid grid-cols-1 sm:grid-cols-2 items-center gap-3 sm:gap-0">
           <div>
             <div className="flex gap-1">
-              <p className="text-sm text-center lg:text-left">
+              <p className="text-sm text-center lg:text-left text-zinc-900 dark:text-zinc-400">
                 {globalConfig.title}
               </p>
             </div>

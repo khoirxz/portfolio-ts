@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 // google font
-import { Fira_Code } from "next/font/google";
-// next/font/local
-import localFont from "next/font/local";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -10,17 +9,17 @@ import { globalConfig } from "./config";
 
 // font files can be colocated in the `app`
 
-const GeneralSans = localFont({
-  src: "./fonts/GeneralSans-Variable.woff2",
-  display: "swap",
-  variable: "--font-general-sans",
-});
-
-// google font
-const firaCode = Fira_Code({
+const imbPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-fira-code",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-mono",
+});
+const imbPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-sans",
 });
 
 export const metadata: Metadata = {
@@ -50,18 +49,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
-        className={`${GeneralSans.variable} ${firaCode.variable} antialiased font-[family-name:var(--font-general-sans)] relative`}>
+        className={`${imbPlexMono.variable} ${imbPlexSans.variable} antialiased font-[family-name:var(--font-ibm-plex-sans)] relative bg-[#FFF4E4] dark:bg-[#1A1A1E]`}>
         <Navbar />
         {children}
-        {modal}
         <Footer />
       </body>
     </html>

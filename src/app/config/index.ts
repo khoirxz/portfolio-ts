@@ -1,4 +1,4 @@
 export const globalConfig = {
   title: "Rizqi Khoirurrohman",
-  description: "Full stack web developer",
+  description: "Full stack developer",
 } as const;
