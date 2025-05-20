@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 // google font
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
@@ -8,18 +8,11 @@ import Footer from "@/app/components/Footer";
 import { globalConfig } from "./config";
 
 // font files can be colocated in the `app`
-
-const imbPlexMono = IBM_Plex_Mono({
+const bricolageGrotosque = Bricolage_Grotesque({
   subsets: ["latin"],
+  variable: "--font-bricolage-grotesque",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-mono",
-});
-const imbPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${imbPlexMono.variable} ${imbPlexSans.variable} antialiased font-[family-name:var(--font-ibm-plex-sans)] relative bg-[#FFF4E4] dark:bg-[#1A1A1E]`}>
+        className={`${bricolageGrotosque.variable} antialiased font-[family-name:var(--font-bricolage-grotesque)] relative bg-[#f5f5f5] text-black dark:text-black`}>
         <Navbar />
         {children}
         <Footer />
