@@ -11,3 +11,10 @@
     --color-foreground: var(--background);
   }
 }
+
+@layer base {
+  ::selection {
+    background-color: #2f1d5b67;
+    color: #121212;
+  }
+}

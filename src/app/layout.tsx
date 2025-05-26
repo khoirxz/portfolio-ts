@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 // google font
-import { Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque, UnifrakturMaguntia } from "next/font/google";
 
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
 import { globalConfig } from "./config";
 
 // font files can be colocated in the `app`
@@ -13,6 +11,13 @@ const bricolageGrotosque = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
   display: "swap",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
+
+const unifrakturMaguntia = UnifrakturMaguntia({
+  subsets: ["latin"],
+  variable: "--font-unifraktur-maguntia",
+  display: "swap",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -48,10 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolageGrotosque.variable} antialiased font-[family-name:var(--font-bricolage-grotesque)] relative bg-[#f5f5f5] text-black dark:text-black`}>
-        <Navbar />
+        className={`${bricolageGrotosque.variable} ${unifrakturMaguntia.variable} antialiased font-[family-name:var(--font-bricolage-grotesque)] relative bg-[#f5f5f5] text-black dark:text-black`}>
         {children}
-        <Footer />
       </body>
     </html>
   );
