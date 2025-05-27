@@ -39,16 +39,13 @@ export default function Posts({ item }: { item: Edge }) {
   // Overlay effect when drawer is open
   useEffect(() => {
     if (isOpen && overlayRef.current) {
-      // remove scroll from body
-      document.body.style.overflow = "hidden";
+
       gsap.to(overlayRef.current, {
         opacity: 1,
         duration: 0.3,
         ease: "power2.out",
       });
     } else if (overlayRef.current) {
-      // restore scroll to body
-      document.body.style.overflow = "auto";
       gsap.to(overlayRef.current, {
         opacity: 0,
         duration: 0.3,
