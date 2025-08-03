@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
 // google font
-import { Bricolage_Grotesque, UnifrakturMaguntia } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import "./globals.css";
 import { globalConfig } from "./config";
 
 // font files can be colocated in the `app`
-const bricolageGrotosque = Bricolage_Grotesque({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-bricolage-grotesque",
+  variable: "--font-plus-jakarta-sans",
   display: "swap",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
-});
-
-const unifrakturMaguntia = UnifrakturMaguntia({
-  subsets: ["latin"],
-  variable: "--font-unifraktur-maguntia",
-  display: "swap",
-  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -53,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolageGrotosque.variable} ${unifrakturMaguntia.variable} antialiased font-[family-name:var(--font-bricolage-grotesque)] relative bg-[#f5f5f5] text-black dark:text-black`}>
+        className={`${plusJakartaSans.variable} antialiased font-[family-name:var(--font-plus-jakarta-sans)] relative bg-[#f5f5f5] text-black dark:text-black`}>
         {children}
       </body>
     </html>
