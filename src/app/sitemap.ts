@@ -1,4 +1,4 @@
-import { allProjects, allActivities } from "contentlayer/generated";
+import { allProjects, allActivities } from "../../.contentlayer/generated";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
