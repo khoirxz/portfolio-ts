@@ -18,7 +18,9 @@
         "name": "next"
       }
     ],
-    "paths": {},
+    "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
     "baseUrl": "."
   },
   "include": [
