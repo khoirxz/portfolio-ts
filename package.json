@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "contentlayer2 build"
+    "lint": "next lint"
   },
   "dependencies": {
     "dayjs": "^1.11.18",
