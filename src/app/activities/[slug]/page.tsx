@@ -1,4 +1,4 @@
-import { allActivities } from ".contentlayer/generated";
+import { allActivities } from "../../../../.contentlayer/generated";
 import MDX from "../../../components/MDX";
 import Link from "next/link";
 import { notFound } from "next/navigation";

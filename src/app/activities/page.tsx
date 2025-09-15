@@ -1,4 +1,4 @@
-import { allActivities } from ".contentlayer/generated";
+import { allActivities } from "../../../.contentlayer/generated";
 import Link from "next/link";
 import dayjs from "dayjs";
 

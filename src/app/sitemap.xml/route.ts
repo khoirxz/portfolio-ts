@@ -1,4 +1,4 @@
-import { allProjects, allActivities } from ".contentlayer/generated";
+import { allProjects, allActivities } from "../../../.contentlayer/generated";
 
 export async function GET() {
   const site = process.env.SITE_URL ?? "https://rizqikhoir.my.id";

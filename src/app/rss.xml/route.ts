@@ -1,4 +1,4 @@
-import { allProjects, allActivities } from ".contentlayer/generated";
+import { allProjects, allActivities } from "../../../.contentlayer/generated";
 
 function escapeXML(s: string) {
   return s.replace(
