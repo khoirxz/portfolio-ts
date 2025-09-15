@@ -1,4 +1,4 @@
-import { allActivities } from "../../../.contentlayer/generated";
+import { allActivities } from "content-collections";
 import Link from "next/link";
 import dayjs from "dayjs";
 
@@ -53,7 +53,9 @@ export default async function ActivitiesPage({ searchParams }: Props) {
         <div>
           <ul className="grid grid-cols-1 gap-4">
             {items.map((a) => (
-              <div className="flex flex-row gap-4 items-center" key={a._id}>
+              <div
+                className="flex flex-row gap-4 items-center"
+                key={a._meta.path}>
                 <div className="flex flex-row gap-2 items-center">
                   <span className="bg-amber-200/40 rounded-full p-2 text-2xl">
                     {a.icon}
@@ -61,7 +63,7 @@ export default async function ActivitiesPage({ searchParams }: Props) {
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-row items-center gap-2">
-                    <Link href={a.url}>
+                    <Link href={a._meta.fileName}>
                       <h2 className="text-sm text-black font-[family-name:var(--font-plus-jakarta-sans)]">
                         <b>{a.title}</b> - {a.summary} - <b>{a.kind}</b>
                       </h2>

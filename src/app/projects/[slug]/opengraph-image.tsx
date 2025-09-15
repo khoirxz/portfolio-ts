@@ -1,12 +1,16 @@
 import { ImageResponse } from "next/og";
-import { allProjects } from "../../../../.contentlayer/generated";
+import { allProjects } from "content-collections";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function Image({ params }: { params: { slug: string } }) {
+export default async function Image({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  const p = allProjects.find((x) => x.slug === slug);
+  const p = allProjects.find((x) => x._meta.path === slug);
   const title = p?.title ?? "Project";
   const summary = p?.summary ?? "";
 

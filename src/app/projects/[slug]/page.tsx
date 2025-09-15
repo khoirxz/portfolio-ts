@@ -1,5 +1,5 @@
-import { allProjects } from "../../../../.contentlayer/generated";
-import MDX from "../../../components/MDX";
+import { allProjects } from ".content-collections/generated";
+import MDX from "@/components/MDX";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -10,11 +10,11 @@ type Props = {
 };
 
 export const generateStaticParams = async () =>
-  allProjects.map((p) => ({ slug: p.slug }));
+  allProjects.map((p) => ({ slug: p._meta.path }));
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const doc = allProjects.find((p) => p.slug === slug);
+  const doc = allProjects.find((p) => p._meta.path === slug);
 
   if (!doc) return {};
 
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       title: doc.title,
       description: doc.summary,
+      url: `/projects/${doc._meta.path}`,
     },
   };
 }
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params;
 
-  const doc = allProjects.find((p) => p.slug === slug);
+  const doc = allProjects.find((p) => p._meta.path === slug);
 
   if (!doc) return notFound();
 
@@ -49,7 +50,7 @@ export default async function ProjectDetail({ params }: Props) {
 
         <article className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">{doc.title}</h1>
-          <MDX code={doc.body.code} />
+          <MDX code={doc.mdx} />
         </article>
       </div>
     </div>

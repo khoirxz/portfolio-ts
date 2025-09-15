@@ -1,5 +1,5 @@
-import { allActivities } from "../../../../.contentlayer/generated";
-import MDX from "../../../components/MDX";
+import { allActivities } from ".content-collections/generated";
+import MDX from "@/components/MDX";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -10,12 +10,12 @@ type Props = {
 };
 
 export const generateStaticParams = () =>
-  allActivities.map((a) => ({ slug: a.slug }));
+  allActivities.map((a) => ({ slug: a._meta.path }));
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
 
-  const doc = allActivities.find((a) => a.slug === slug);
+  const doc = allActivities.find((a) => a._meta.path === slug);
   if (!doc) return {};
   return { title: doc.title, description: doc.summary };
 }
@@ -28,7 +28,7 @@ export default async function ActivityDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const doc = allActivities.find((a) => a.slug === slug);
+  const doc = allActivities.find((a) => a._meta.path === slug);
   if (!doc) return notFound();
 
   return (
@@ -47,7 +47,7 @@ export default async function ActivityDetailPage({
 
         <article className="flex flex-col gap-4">
           <h1 className="text-2xl font-bold">{doc.title}</h1>
-          <MDX code={doc.body.code} />
+          <MDX code={doc.mdx} />
         </article>
       </div>
     </main>

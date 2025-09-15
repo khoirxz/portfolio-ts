@@ -1,6 +1,6 @@
 "use client";
 
-import { useMDXComponent } from "next-contentlayer2/hooks";
+import { MDXContent } from "@content-collections/mdx/react";
 import Image, { ImageProps } from "next/image";
 
 import Badge from "./badge";
@@ -25,6 +25,5 @@ const components = {
 } as const;
 
 export default function MDX({ code }: { code: string }) {
-  const Component = useMDXComponent(code);
-  return <Component components={components} />;
+  return <MDXContent code={code} components={components} />;
 }

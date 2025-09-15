@@ -1,4 +1,4 @@
-import { allProjects, allActivities } from "../../../.contentlayer/generated";
+import { allProjects, allActivities } from ".content-collections/generated";
 
 function escapeXML(s: string) {
   return s.replace(
@@ -15,13 +15,13 @@ export async function GET() {
   const items = [
     ...allProjects.map((d) => ({
       title: d.title,
-      url: `${site}/projects/${d.slug}`,
+      url: `${site}/projects/${d._meta.path}`,
       date: d.date,
       desc: d.summary,
     })),
     ...allActivities.map((d) => ({
       title: d.title,
-      url: `${site}/activities/${d.slug}`,
+      url: `${site}/activities/${d._meta.path}`,
       date: d.date,
       desc: d.summary ?? "",
     })),

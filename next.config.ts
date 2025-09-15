@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { withContentlayer } from "next-contentlayer2";
+import { withContentCollections } from "@content-collections/next";
 
 const nextConfig: NextConfig = {
   images: {
@@ -11,9 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    mdxRs: true,
-  },
 };
 
-export default withContentlayer(nextConfig);
+export default withContentCollections(nextConfig);
