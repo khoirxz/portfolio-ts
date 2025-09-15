@@ -6,11 +6,11 @@ import { MoveUpLeftIcon } from "lucide-react";
 
 export const revalidate = 60; // ISR
 
-export default async function ActivitiesPage({
-  searchParams,
-}: {
-  searchParams: { kind?: string };
-}) {
+type Props = {
+  searchParams: Promise<{ kind?: string }>;
+};
+
+export default async function ActivitiesPage({ searchParams }: Props) {
   const { kind } = await searchParams;
   let items = [...allActivities].sort(
     (a, b) => +new Date(b.date) - +new Date(a.date)

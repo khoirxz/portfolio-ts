@@ -5,14 +5,14 @@ import Link from "next/link";
 
 import { MoveUpLeftIcon } from "lucide-react";
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export const generateStaticParams = async () =>
   allProjects.map((p) => ({ slug: p.slug }));
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const doc = allProjects.find((p) => p.slug === slug);
 
@@ -28,11 +28,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProjectDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params;
 
   const doc = allProjects.find((p) => p.slug === slug);

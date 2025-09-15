@@ -5,14 +5,14 @@ import { notFound } from "next/navigation";
 
 import { MoveUpLeftIcon } from "lucide-react";
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export const generateStaticParams = () =>
   allActivities.map((a) => ({ slug: a.slug }));
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
 
   const doc = allActivities.find((a) => a.slug === slug);
@@ -25,7 +25,7 @@ export const revalidate = 60; // ISR
 export default async function ActivityDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const doc = allActivities.find((a) => a.slug === slug);
