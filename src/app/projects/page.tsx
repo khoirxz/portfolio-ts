@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { MoveUpLeftIcon } from "lucide-react";
-import Posts from "@/components/posts";
+import Posts from "../../components/posts";
 
 export const revalidate = 60; // ISR
 

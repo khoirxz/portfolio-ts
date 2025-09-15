@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import Posts from "../components/posts";
 import Badge from "../components/badge";
-import Activities from "@/components/activities";
+import Activities from "../components/activities";
 
 const socials: { name: string; url: string; icon: React.JSX.Element }[] = [
   {

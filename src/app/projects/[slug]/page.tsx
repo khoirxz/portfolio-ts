@@ -1,5 +1,5 @@
 import { allProjects } from ".contentlayer/generated";
-import MDX from "@/components/MDX";
+import MDX from "../../../components/MDX";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
