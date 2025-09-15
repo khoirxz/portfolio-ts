@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 // google font
-import { Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Pixelify_Sans,
+  Inter_Tight,
+} from "next/font/google";
 
 import "./globals.css";
-import { globalConfig } from "./config";
+import { globalConfig } from "../config";
 
 // font files can be colocated in the `app`
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -11,6 +15,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   display: "swap",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
+  display: "swap",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ["latin"],
+  variable: "--font-pixelify-sans",
+  display: "swap",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaSans.variable} antialiased font-[family-name:var(--font-plus-jakarta-sans)] relative bg-[#f5f5f5] text-black dark:text-black`}>
+        className={`${plusJakartaSans.variable} ${pixelifySans.variable} ${interTight.variable} antialiased font-[family-name:var(--font-plus-jakarta-sans)] relative bg-[#f5f5f5] text-black dark:text-black`}>
         {children}
       </body>
     </html>

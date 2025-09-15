@@ -1,10 +1,10 @@
 "use server";
 
 import Image from "next/image";
-import Link from "next/link";
 
-import { getPosts } from "@/app/graphql/queries";
-import Posts from "./components/posts";
+import Posts from "../components/posts";
+import Badge from "../components/badge";
+import Activities from "@/components/activities";
 
 const socials: { name: string; url: string; icon: React.JSX.Element }[] = [
   {
@@ -85,57 +85,81 @@ const socials: { name: string; url: string; icon: React.JSX.Element }[] = [
 ];
 
 export default async function Home() {
-  const data = await getPosts();
-
   return (
-    <div className="flex flex-col items-center max-w-3xl mx-auto p-4 md:p-8 gap-5">
-      <section className="flex flex-col w-full gap-5 bg-gray-50 p-5 rounded-2xl">
-        <div className="flex flex-col md:flex-row items-center gap-4">
-          <div className="relative w-[120px] h-[120px] hover:scale-105 transition-all z-20">
-            <span className="absolute top-0 right-0 w-4 h-4 bg-green-300 rounded-full z-50 animate-ping"></span>
-            <span className="absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full z-50"></span>
-            {/* Online Indicator */}
-            <Image
-              src="/profile.jpg"
-              alt="Rizqi Khoirurrohman"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="rounded-2xl"
-            />
-          </div>
+    <div className="flex flex-col items-center relative">
+      <div
+        className="bg-[url('/pattern.svg')] bg-center w-full h-[25vh]"
+        style={{
+          backgroundSize: "1000px",
+        }}></div>
+      <div className="max-w-4xl w-full flex flex-col bg-white min-h-[75vh] p-12 relative gap-8">
+        <div className="flex flex-col ring-white ring-8 absolute -top-16 rounded-full">
+          <Image
+            src="/profile.png"
+            alt="profile"
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
+        </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="text-center md:text-left space-y-1">
-              <h1 className="text-blue-500 hover:font-[family-name:var(--font-plus-jakarta-sans] transition-all text-lg font-semibold">
-                Rizqi Khoirurrohman.
-              </h1>
-              <h1 className="text-sm">Fullstack developer and Pixel artist.</h1>
-            </div>
+        <div>
+          <h1 className="text-2xl font-bold">Rizqi Khoirurrohman</h1>
+          <p className="text-gray-500 font-[family-name:var(--font-pixelify-sans)]">
+            Web Developer
+          </p>
 
-            <div className="flex flex-row gap-4 justify-center md:justify-start">
-              {socials.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 mb-2 hover:text-blue-500 transition-all">
-                  {social.icon}
-                </Link>
-              ))}
-            </div>
+          <div className="flex flex-row gap-2 mt-4">
+            {socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-row items-center gap-2 h-5 w-5">
+                {social.icon}
+              </a>
+            ))}
           </div>
         </div>
-      </section>
 
-      <section className="flex flex-col w-full space-y-3">
-        <h1 className="font-semibold">Recent Posts</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {data.allPosts.edges.map((item) => (
-            <Posts key={item.node.id} item={item} />
-          ))}
+        <div className="flex flex-col gap-5">
+          <div>
+            <Badge title="About" />
+          </div>
+
+          <div className="text-base/6 space-y-2 text-zinc-600 font-[family-name:var(--font-inter-tight)]">
+            <p>
+              Saya web developer yang berfokus membangun web app yang kencang,
+              accessible, dan enak dipakai.
+            </p>
+            <p>
+              Saya suka bereksperimen dengan real-time features, integrasi API,
+              serta detail UI seperti palet warna dari gambar dan animasi halus.
+            </p>
+            <p>
+              Di waktu luang, saya sering “slicing” desain dan membuat pixel art
+              untuk menjaga sensitivitas visual.
+            </p>
+          </div>
         </div>
-      </section>
+
+        <div className="flex flex-col gap-5">
+          <div>
+            <Badge title="Proyek" />
+          </div>
+
+          <Posts />
+        </div>
+
+        <div className="flex flex-col gap-5">
+          <div>
+            <Badge title="Kegiatan Terbaru" />
+          </div>
+
+          <Activities />
+        </div>
+      </div>
     </div>
   );
 }
