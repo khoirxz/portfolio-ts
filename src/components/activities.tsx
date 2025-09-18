@@ -9,9 +9,11 @@ export default function Activities() {
   return (
     <div className="font-[family-name:var(--font-inter-tight)] flex flex-col gap-8">
       {allActivities.map((activity) => (
-        <div className="flex flex-row gap-4 items-center" key={activity.date}>
+        <div
+          className="flex flex-row gap-4 items-center"
+          key={activity._meta.path}>
           <div className="flex flex-row gap-2 items-center">
-            <span className="bg-amber-200/40 rounded-full p-2">
+            <span className="bg-amber-200/40 rounded-full p-2 text-sm h-10 w-10 flex items-center justify-center">
               {activity.icon}
             </span>
           </div>
