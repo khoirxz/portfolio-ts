@@ -5,6 +5,7 @@ import Image from "next/image";
 import Posts from "@/components/posts";
 import Badge from "@/components/badge";
 import Activities from "@/components/activities";
+import AppDarkMode from "@/components/app-darkmode";
 
 const socials: { name: string; url: string; icon: React.JSX.Element }[] = [
   {
@@ -91,15 +92,19 @@ export default async function Home() {
         className="bg-[url('/pattern.svg')] bg-center w-full h-[25vh]"
         style={{
           backgroundSize: "1000px",
-        }}></div>
+        }}>
+        <div className="absolute text-white right-[20%] top-2">
+          <AppDarkMode />
+        </div>
+      </div>
       <div className="max-w-4xl w-full flex flex-col bg-white min-h-[75vh] p-12 relative gap-8">
-        <div className="flex flex-col ring-white ring-8 absolute -top-16 rounded-full">
+        <div className="flex flex-col ring-white ring-8 absolute -top-16 rounded-full w-24 h-24">
           <Image
             src="/profile.png"
             alt="profile"
-            width={100}
-            height={100}
-            className="rounded-full"
+            width={120}
+            height={120}
+            className="rounded-full w-auto h-auto"
           />
         </div>
 
