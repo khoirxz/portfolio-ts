@@ -12,9 +12,13 @@ type Props = {
 
 export default async function ActivitiesPage({ searchParams }: Props) {
   const { kind } = await searchParams;
+
   let items = [...allActivities].sort(
-    (a, b) => +new Date(b.date) - +new Date(a.date)
+    (a, b) =>
+      new Date(dayjs(a.date).format("YYYY-MM-DD")).getTime() -
+      new Date(dayjs(b.date).format("YYYY-MM-DD")).getTime()
   );
+
   if (kind && ["code", "design", "music", "note"].includes(kind))
     items = items.filter((i) => i.kind === kind);
 

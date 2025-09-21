@@ -7,8 +7,6 @@ import useDarkMode from "@/hooks/useDarkMode";
 export default function AppDarkMode() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  console.log(isDarkMode);
-
   return (
     <div className="flex flex-row gap-2">
       <button onClick={toggleDarkMode}>

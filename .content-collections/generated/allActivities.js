@@ -47,5 +47,21 @@ export default [
       "path": "2025-09-19-dark-mode"
     },
     "mdx": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var l=Object.getOwnPropertyNames;var _=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var j=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),M=(n,e)=>{for(var t in e)r(n,t,{get:e[t],enumerable:!0})},m=(n,e,t,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of l(e))!f.call(n,o)&&o!==t&&r(n,o,{get:()=>e[o],enumerable:!(i=x(e,o))||i.enumerable});return n};var h=(n,e,t)=>(t=n!=null?u(_(n)):{},m(e||!n||!n.__esModule?r(t,\"default\",{value:n,enumerable:!0}):t,n)),C=n=>m(r({},\"__esModule\",{value:!0}),n);var s=j((g,a)=>{a.exports=_jsx_runtime});var D={};M(D,{default:()=>p});var c=h(s());function d(n){let e={p:\"p\",...n.components};return(0,c.jsx)(e.p,{children:\"Implementasi dark mode dengan icon pixel (\\u{1F319}).\"})}function p(n={}){let{wrapper:e}=n.components||{};return e?(0,c.jsx)(e,{...n,children:(0,c.jsx)(d,{...n})}):d(n)}return C(D);})();\n;return Component;"
+  },
+  {
+    "icon": "👨‍💻",
+    "title": "Update portofolio",
+    "date": "2025-09-21",
+    "kind": "code",
+    "summary": "Update tampilan activity.",
+    "content": "Desain activity sekarang menjadi changelog dan pada tampilan utama kita\r\nhanya menampilkan 3 activity terbaru. Kemudian saya menambahkan button untuk\r\nmenampilkan semua activity.",
+    "_meta": {
+      "filePath": "2025-09-21-activity.mdx",
+      "fileName": "2025-09-21-activity.mdx",
+      "directory": ".",
+      "extension": "mdx",
+      "path": "2025-09-21-activity"
+    },
+    "mdx": "var Component=(()=>{var d=Object.create;var i=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var k=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,y=Object.prototype.hasOwnProperty;var h=(n,a)=>()=>(a||n((a={exports:{}}).exports,a),a.exports),_=(n,a)=>{for(var t in a)i(n,t,{get:a[t],enumerable:!0})},r=(n,a,t,o)=>{if(a&&typeof a==\"object\"||typeof a==\"function\")for(let e of k(a))!y.call(n,e)&&e!==t&&i(n,e,{get:()=>a[e],enumerable:!(o=l(a,e))||o.enumerable});return n};var f=(n,a,t)=>(t=n!=null?d(x(n)):{},r(a||!n||!n.__esModule?i(t,\"default\",{value:n,enumerable:!0}):t,n)),j=n=>r(i({},\"__esModule\",{value:!0}),n);var u=h((v,c)=>{c.exports=_jsx_runtime});var b={};_(b,{default:()=>p});var m=f(u());function s(n){let a={p:\"p\",...n.components};return(0,m.jsx)(a.p,{children:`Desain activity sekarang menjadi changelog dan pada tampilan utama kita\\r\nhanya menampilkan 3 activity terbaru. Kemudian saya menambahkan button untuk\\r\nmenampilkan semua activity.`})}function p(n={}){let{wrapper:a}=n.components||{};return a?(0,m.jsx)(a,{...n,children:(0,m.jsx)(s,{...n})}):s(n)}return j(b);})();\n;return Component;"
   }
 ]

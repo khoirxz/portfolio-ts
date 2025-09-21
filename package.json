@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "dayjs": "^1.11.18",
     "graphql-request": "^7.1.2",
     "gsap": "^3.13.0",

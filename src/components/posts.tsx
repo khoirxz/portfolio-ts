@@ -10,7 +10,7 @@ export default function Posts() {
     <div className="font-[family-name:var(--font-inter-tight)] flex flex-col gap-8">
       {allProjects.map((project) => (
         <div
-          className="flex flex-row gap-4 items-center"
+          className="flex flex-col md:flex-row gap-4 md:items-center"
           key={project._meta.path}>
           <div>
             <Image
@@ -18,16 +18,18 @@ export default function Posts() {
               alt={project.title}
               width={96}
               height={96}
-              className="rounded-xl"
+              className="rounded-full md:rounded-xl max-w-10 max-h-10 md:max-w-[96px] md:max-h-[96px]"
             />
           </div>
           <div className="flex flex-col gap-2">
             <Link href={`/projects/${project._meta.path}`}>
-              <h2 className="text-xl font-bold text-black font-[family-name:var(--font-plus-jakarta-sans)]">
+              <h2 className="md:text-xl font-bold text-black font-[family-name:var(--font-plus-jakarta-sans)]">
                 {project.title}
               </h2>
             </Link>
-            <p className="text-gray-600 text-base/6">{project.summary}</p>
+            <p className="text-gray-600 text-sm md:text-base/6">
+              {project.summary}
+            </p>
           </div>
         </div>
       ))}

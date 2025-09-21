@@ -93,7 +93,7 @@ export default async function Home() {
         style={{
           backgroundSize: "1000px",
         }}>
-        <div className="absolute text-white right-[20%] top-2">
+        <div className="absolute text-white right-4 md:right-[20%] top-2">
           <AppDarkMode />
         </div>
       </div>
@@ -157,7 +157,7 @@ export default async function Home() {
           <Posts />
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-10">
           <div>
             <Badge title="Kegiatan Terbaru" />
           </div>
