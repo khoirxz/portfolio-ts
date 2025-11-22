@@ -10,38 +10,38 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0",
-    "dayjs": "^1.11.18",
-    "graphql-request": "^7.1.2",
+    "dayjs": "^1.11.19",
+    "graphql-request": "^7.3.4",
     "gsap": "^3.13.0",
-    "lucide-react": "^0.511.0",
-    "next": "15.5.3",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
+    "lucide-react": "^0.554.0",
+    "next": "16.0.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@content-collections/core": "^0.11.1",
+    "@content-collections/core": "^0.12.0",
     "@content-collections/mdx": "^0.2.2",
-    "@content-collections/next": "^0.2.7",
+    "@content-collections/next": "^0.2.9",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "19.1.13",
-    "@types/react-dom": "19.1.9",
+    "@types/node": "^24",
+    "@types/react": "19.2.6",
+    "@types/react-dom": "19.2.3",
     "eslint": "^9",
-    "eslint-config-next": "15.5.3",
+    "eslint-config-next": "16.0.3",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
-    "shiki": "^3.12.2",
+    "shiki": "^3.15.0",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "zod": "^4.1.8"
+    "zod": "^4.1.12"
   },
   "overrides": {
-    "@types/react": "19.1.13",
-    "@types/react-dom": "19.1.9"
+    "@types/react": "19.2.6",
+    "@types/react-dom": "19.2.3"
   }
 }
