@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 import { MoveUpLeftIcon } from "lucide-react";
+import { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -12,7 +13,7 @@ type Props = {
 export const generateStaticParams = async () =>
   allProjects.map((p) => ({ slug: p._meta.path }));
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const doc = allProjects.find((p) => p._meta.path === slug);
 
@@ -41,14 +42,15 @@ export default async function ProjectDetail({ params }: Props) {
       <div className="max-w-4xl w-full flex flex-col bg-white min-h-screen p-12 relative gap-8">
         <Link
           href="/projects"
-          className="flex flex-row gap-2 mt-4 items-center">
+          className="flex flex-row gap-2 mt-4 items-center"
+        >
           <MoveUpLeftIcon className="h-4 w-4" />{" "}
           <span className="text-sm font-[family-name:var(--font-pixelify-sans)]">
             Semua Proyek 👨‍💻
           </span>
         </Link>
 
-        <article className="flex flex-col gap-4">
+        <article className="flex flex-col gap-4 font-[family-name:var(--font-pixelify-sans)] text-lg">
           <h1 className="text-2xl font-bold">{doc.title}</h1>
           <MDX code={doc.mdx} />
         </article>

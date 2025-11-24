@@ -7,11 +7,12 @@ export const revalidate = 60; // ISR
 
 export default function Posts() {
   return (
-    <div className="font-[family-name:var(--font-inter-tight)] flex flex-col gap-8">
+    <div className="font-[family-name:var(--font-pixelify-sans)] flex flex-col gap-8">
       {allProjects.map((project) => (
         <div
           className="flex flex-col md:flex-row gap-4 md:items-center"
-          key={project._meta.path}>
+          key={project._meta.path}
+        >
           <div>
             <Image
               src={project.icon}
@@ -23,7 +24,7 @@ export default function Posts() {
           </div>
           <div className="flex flex-col gap-2">
             <Link href={`/projects/${project._meta.path}`}>
-              <h2 className="md:text-xl font-bold text-black font-[family-name:var(--font-plus-jakarta-sans)]">
+              <h2 className="md:text-xl font-bold text-black font-[family-name:var(--font-pixelify-sans)]">
                 {project.title}
               </h2>
             </Link>

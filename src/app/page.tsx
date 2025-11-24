@@ -109,9 +109,14 @@ export default async function Home() {
         </div>
 
         <div>
-          <h1 className="text-2xl font-bold">Rizqi Khoirurrohman</h1>
+          <h1 className="text-2xl font-bold font-[family-name:var(--font-pixelify-sans)]">
+            Rizqi Khoirurrohman
+          </h1>
           <p className="text-gray-500 font-[family-name:var(--font-pixelify-sans)]">
             Web Developer
+          </p>
+          <p className="text-gray-500 font-[family-name:var(--font-pixelify-sans)]">
+            Java Programer di RS Prasetya Husada
           </p>
 
           <div className="flex flex-row gap-2 mt-4">
@@ -133,7 +138,7 @@ export default async function Home() {
             <Badge title="About" />
           </div>
 
-          <div className="text-base/6 space-y-2 text-zinc-600 font-[family-name:var(--font-inter-tight)]">
+          <div className="text-base/6 space-y-2 text-zinc-600 font-[family-name:var(--font-pixelify-sans)]">
             <p>
               Saya web developer yang berfokus membangun web app yang kencang,
               accessible, dan enak dipakai.

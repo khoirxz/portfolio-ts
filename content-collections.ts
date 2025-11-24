@@ -4,6 +4,7 @@ import { z } from "zod";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolink from "rehype-autolink-headings";
+import ENUM from "./src/ENUM";
 
 const projects = defineCollection({
   name: "projects",
@@ -39,7 +40,7 @@ const activities = defineCollection({
     icon: z.string(),
     title: z.string(),
     date: z.string(),
-    kind: z.enum(["code", "design", "music", "note"]),
+    kind: z.enum(ENUM.KIND.map((kind) => kind.name)),
     summary: z.string(),
   }),
   transform: async (document, context) => {

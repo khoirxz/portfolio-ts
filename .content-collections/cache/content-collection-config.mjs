@@ -5,6 +5,30 @@ import { z } from "zod";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolink from "rehype-autolink-headings";
+
+// src/ENUM.ts
+var ENUM = {
+  KIND: [
+    {
+      name: "code"
+    },
+    {
+      name: "design"
+    },
+    {
+      name: "music"
+    },
+    {
+      name: "note"
+    },
+    {
+      name: "activity"
+    }
+  ]
+};
+var ENUM_default = ENUM;
+
+// content-collections.ts
 var projects = defineCollection({
   name: "projects",
   directory: "src/content/projects",
@@ -40,7 +64,7 @@ var activities = defineCollection({
     icon: z.string(),
     title: z.string(),
     date: z.string(),
-    kind: z.enum(["code", "design", "music", "note"]),
+    kind: z.enum(ENUM_default.KIND.map((kind) => kind.name)),
     summary: z.string()
   }),
   transform: async (document, context) => {
