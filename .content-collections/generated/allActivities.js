@@ -95,5 +95,21 @@ export default [
       "path": "2025-11-24-my-playlist"
     },
     "mdx": "var Component=(()=>{var d=Object.create;var i=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var y=Object.getPrototypeOf,k=Object.prototype.hasOwnProperty;var h=(e,a)=>()=>(a||e((a={exports:{}}).exports,a),a.exports),b=(e,a)=>{for(var t in a)i(e,t,{get:a[t],enumerable:!0})},l=(e,a,t,s)=>{if(a&&typeof a==\"object\"||typeof a==\"function\")for(let r of g(a))!k.call(e,r)&&r!==t&&i(e,r,{get:()=>a[r],enumerable:!(s=p(a,r))||s.enumerable});return e};var f=(e,a,t)=>(t=e!=null?d(y(e)):{},l(a||!e||!e.__esModule?i(t,\"default\",{value:e,enumerable:!0}):t,e)),j=e=>l(i({},\"__esModule\",{value:!0}),e);var m=h((_,o)=>{o.exports=_jsx_runtime});var w={};b(w,{default:()=>c});var n=f(m());function u(e){let a={a:\"a\",p:\"p\",...e.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(a.p,{children:\"Saya suka mendengarkan musik ketika berkerja. Sebagai penggemar musik, saya selalu mencari lagu-lagu baru yang menarik dan menambah koleksi playlist saya. Selain itu, saya juga mencoba berbagai genre musik untuk menjaga keberagaman dalam playlist saya.\"}),`\n`,(0,n.jsx)(a.p,{children:\"Metalcore, Post-Hardcore, Deathcore adalah genre musik yang saya sukai. Saya juga menyukai genre lain seperti Indie, Pop, dan Electronic tetapi tidak terlalu sering mendengarkannya.\"}),`\n`,(0,n.jsx)(a.p,{children:(0,n.jsx)(a.a,{href:\"https://www.spotify.com\",children:\"Cek Playlist saya di spotify\"})}),`\n`,(0,n.jsx)(\"iframe\",{\"data-testid\":\"embed-iframe\",style:{borderRadius:12},src:\"https://open.spotify.com/embed/playlist/4jpmKGaAkvVgqZNG3SXvOm?utm_source=generator&theme=0\",width:\"100%\",height:152,frameBorder:0,allowFullScreen:\"\",allow:\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\",loading:\"lazy\"})]})}function c(e={}){let{wrapper:a}=e.components||{};return a?(0,n.jsx)(a,{...e,children:(0,n.jsx)(u,{...e})}):u(e)}return j(w);})();\n;return Component;"
+  },
+  {
+    "icon": "🧑‍💻",
+    "title": "Sanity, Next.js dan Toko Online",
+    "date": "2025-11-25",
+    "kind": "code",
+    "summary": "Eksperimen Sanity dan Next.js untuk Toko Online.",
+    "content": "Sanity adalah headless CMS yang dimana kamu bisa membuat dan mengelola konten tanpa harus memahami teknologi backend.\nSaya mencoba membuat sebuah toko online dengan Sanity sebagai backend dan Next.js sebagai frontend.\n\nLink: [Preview](https://storefront-psi-two.vercel.app/)\n\n![Screenshot](/activities/frontstore.png \"Sanity, Next.js dan Toko Online\")",
+    "_meta": {
+      "filePath": "2025-11-25-experiment-sanity.mdx",
+      "fileName": "2025-11-25-experiment-sanity.mdx",
+      "directory": ".",
+      "extension": "mdx",
+      "path": "2025-11-25-experiment-sanity"
+    },
+    "mdx": "var Component=(()=>{var h=Object.create;var o=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var b=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),f=(e,n)=>{for(var t in n)o(e,t,{get:n[t],enumerable:!0})},r=(e,n,t,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of g(n))!x.call(e,i)&&i!==t&&o(e,i,{get:()=>n[i],enumerable:!(s=p(n,i))||s.enumerable});return e};var k=(e,n,t)=>(t=e!=null?h(u(e)):{},r(n||!e||!e.__esModule?o(t,\"default\",{value:e,enumerable:!0}):t,e)),j=e=>r(o({},\"__esModule\",{value:!0}),e);var c=b((S,m)=>{m.exports=_jsx_runtime});var _={};f(_,{default:()=>l});var a=k(c());function d(e){let n={a:\"a\",img:\"img\",p:\"p\",...e.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)(n.p,{children:`Sanity adalah headless CMS yang dimana kamu bisa membuat dan mengelola konten tanpa harus memahami teknologi backend.\nSaya mencoba membuat sebuah toko online dengan Sanity sebagai backend dan Next.js sebagai frontend.`}),`\n`,(0,a.jsxs)(n.p,{children:[\"Link: \",(0,a.jsx)(n.a,{href:\"https://storefront-psi-two.vercel.app/\",children:\"Preview\"})]}),`\n`,(0,a.jsx)(n.p,{children:(0,a.jsx)(n.img,{src:\"/activities/frontstore.png\",alt:\"Screenshot\",title:\"Sanity, Next.js dan Toko Online\"})})]})}function l(e={}){let{wrapper:n}=e.components||{};return n?(0,a.jsx)(n,{...e,children:(0,a.jsx)(d,{...e})}):d(e)}return j(_);})();\n;return Component;"
   }
 ]
