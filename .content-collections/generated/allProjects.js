@@ -5,6 +5,7 @@ export default [
     "icon": "/projects/duitkas.png",
     "date": "2025-08-20",
     "summary": "Aplikasi pengelola keuangan.",
+    "content": "![Duitkas showcase](/projects/duitkas-showcase-light.png \"Duitkas\")\n![Duitkas showcase](/projects/duitkas-showcase-dark.png \"Duitkas\")\n\n<Title>Konteks💡</Title>\n\nDuitkas adalah aplikasi pengelola keuangan.\nKunci dari pembuatan ini adalah bagaimana saya membuat tampilan yang kompleks dan memperbaiki apakah desain yang dibuat oleh UI/UX cocok untuk pengalaman pengguna atau tidak.\n\n<Title>Arsitektur Singkat 🏗️</Title>\n\n<div className=\"flex flex-col gap-2 p-2\">\n  <List>Atomic Design.</List>\n  <List>Tailwindcss, React Query, React Hook Form.</List>\n  <List>Optimasi Query, Caching, dan Optimasi Performa.</List>\n  <List>Tampilan Smooth + framer.</List>\n</div>\n\n<Link href=\"https://finance.duitkas.com/\">Lihat Preview</Link>",
     "tech": [
       "React (Vite)",
       "TypeScript",
@@ -14,7 +15,6 @@ export default [
     "cover": "/projects/duitkas-showcase.png",
     "featured": true,
     "externalUrl": "https://duitkas-dashboard-one.vercel.app/",
-    "content": "![Duitkas showcase](/projects/duitkas-showcase-light.png \"Duitkas\")\n![Duitkas showcase](/projects/duitkas-showcase-dark.png \"Duitkas\")\n\n<Title>Konteks💡</Title>\n\nDuitkas adalah aplikasi pengelola keuangan.\nKunci dari pembuatan ini adalah bagaimana saya membuat tampilan yang kompleks dan memperbaiki apakah desain yang dibuat oleh UI/UX cocok untuk pengalaman pengguna atau tidak.\n\n<Title>Arsitektur Singkat 🏗️</Title>\n\n<div className=\"flex flex-col gap-2 p-2\">\n  <List>Atomic Design.</List>\n  <List>Tailwindcss, React Query, React Hook Form.</List>\n  <List>Optimasi Query, Caching, dan Optimasi Performa.</List>\n  <List>Tampilan Smooth + framer.</List>\n</div>\n\n<Link href=\"https://finance.duitkas.com/\">Lihat Preview</Link>",
     "_meta": {
       "filePath": "duitkas.mdx",
       "fileName": "duitkas.mdx",
@@ -29,6 +29,7 @@ export default [
     "icon": "/projects/verseyou.png",
     "date": "2025-08-20",
     "summary": "Social music feed dengan Spotify API, dan OG-image generator.",
+    "content": "<Title>Konteks💡</Title>\n\nVerseYou adalah eksperimen social music dengan feed real-time dan theming dinamis.\n\n<Title>Arsitektur Singkat 🏗️</Title>\n\n<div className=\"flex flex-col gap-2 p-2\">\n  <List>App Router, RSC, ISR.</List>\n  <List>API Routes untuk integrasi Spotify & NextAuth.</List>\n</div>\n\n<Title>Fitur Utama 🎉</Title>\n\n<div className=\"flex flex-col gap-2 p-2\">\n  <List>Feed real-time.</List>\n  <List>Theming dinamis.</List>\n  <List>Integrasi Spotify.</List>\n  <List>Integrasi NextAuth.</List>\n</div>\n\n<Link href=\"https://verseyou.example.com\">Lihat Demo</Link>",
     "tech": [
       "Next.js",
       "TypeScript",
@@ -39,7 +40,6 @@ export default [
     "cover": "/images/projects/verseyou-cover.png",
     "featured": true,
     "externalUrl": "https://verseyou.example.com",
-    "content": "<Title>Konteks💡</Title>\n\nVerseYou adalah eksperimen social music dengan feed real-time dan theming dinamis.\n\n<Title>Arsitektur Singkat 🏗️</Title>\n\n<div className=\"flex flex-col gap-2 p-2\">\n  <List>App Router, RSC, ISR.</List>\n  <List>API Routes untuk integrasi Spotify & NextAuth.</List>\n</div>\n\n<Title>Fitur Utama 🎉</Title>\n\n<div className=\"flex flex-col gap-2 p-2\">\n  <List>Feed real-time.</List>\n  <List>Theming dinamis.</List>\n  <List>Integrasi Spotify.</List>\n  <List>Integrasi NextAuth.</List>\n</div>\n\n<Link href=\"https://verseyou.example.com\">Lihat Demo</Link>",
     "_meta": {
       "filePath": "verseyou.mdx",
       "fileName": "verseyou.mdx",

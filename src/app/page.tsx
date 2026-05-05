@@ -113,10 +113,7 @@ export default async function Home() {
             Rizqi Khoirurrohman
           </h1>
           <p className="text-gray-500 font-[family-name:var(--font-pixelify-sans)]">
-            Web Developer
-          </p>
-          <p className="text-gray-500 font-[family-name:var(--font-pixelify-sans)]">
-            Java Programer di RS Prasetya Husada
+            Software Developer
           </p>
 
           <div className="flex flex-row gap-2 mt-4">
@@ -140,16 +137,9 @@ export default async function Home() {
 
           <div className="text-base/6 space-y-2 text-zinc-600 font-[family-name:var(--font-pixelify-sans)]">
             <p>
-              Saya web developer yang berfokus membangun web app yang kencang,
-              accessible, dan enak dipakai.
-            </p>
-            <p>
-              Saya suka bereksperimen dengan real-time features, integrasi API,
-              serta detail UI seperti palet warna dari gambar dan animasi halus.
-            </p>
-            <p>
-              Di waktu luang, saya sering “slicing” desain dan membuat pixel art
-              untuk menjaga sensitivitas visual.
+              Halo, saya seorang software developer yang berfokus membangun
+              aplikasi yang teroptimasi, accessible, dan enak dipakai baik
+              developer maupun user.
             </p>
           </div>
         </div>

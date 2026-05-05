@@ -1,6 +1,6 @@
 import { defineConfig, defineCollection } from "@content-collections/core";
-import { compileMDX } from "@content-collections/mdx";
 import { z } from "zod";
+import { compileMDX } from "@content-collections/mdx";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolink from "rehype-autolink-headings";
@@ -15,6 +15,7 @@ const projects = defineCollection({
     icon: z.string(),
     date: z.string(),
     summary: z.string(),
+    content: z.string(),
     tech: z.array(z.string()).optional(),
     cover: z.string().optional(),
     featured: z.boolean().default(false),
@@ -40,8 +41,9 @@ const activities = defineCollection({
     icon: z.string(),
     title: z.string(),
     date: z.string(),
-    kind: z.enum(ENUM.KIND.map((kind) => kind.name)),
+    kind: z.enum(ENUM.KIND.map((kind) => kind.name) as [string, ...string[]]),
     summary: z.string(),
+    content: z.string(),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {
@@ -56,5 +58,5 @@ const activities = defineCollection({
 });
 
 export default defineConfig({
-  collections: [projects, activities],
+  content: [projects, activities],
 });
